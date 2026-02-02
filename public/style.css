@@ -1,0 +1,141 @@
+/* Global Styles - Dark, Readable, Beautiful */
+:root {
+    --dark-bg: #0a0a0a;
+    --off-white: #f5f5f0;
+    --accent: #8B4513;  /* SaddleBrown - evokes wisdom */
+    --secondary-accent: #2f4f4f; /* DarkSlateGray */
+    --text-muted: #a0a0a0;
+    --border-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    color: var(--off-white);
+    background-color: var(--dark-bg);
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    color: var(--off-white);
+    margin: 2.5rem 0 1rem 0;
+    line-height: 1.4;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; color: var(--accent); }
+h3 { font-size: 1.6rem; color: var(--secondary-accent); }
+h4 { font-size: 1.3rem; }
+
+p {
+    margin-bottom: 1.2rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a0522d;
+    text-decoration: underline;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.nav a {
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 0.5rem 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--off-white);
+    border-bottom-color: var(--accent);
+}
+
+/* Content sections */
+.section {
+    margin: 3rem 0;
+}
+
+.verse {
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.highlight {
+    background-color: rgba(139, 69, 19, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+}
+
+/* Lists */
+ul, ol {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+blockquote {
+    font-style: italic;
+    color: var(--text-muted);
+    border-left: 3px solid var(--secondary-accent);
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+/* Footer */
+.footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    
+    .nav {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+}
