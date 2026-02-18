@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trudaism - Truth as Sacred</title>
+    <title>Trudaism - Collaborative Philosophy Wiki</title>
     <style>
         :root {
             --dark-bg: #0a0a0a;
             --off-white: #f5f5f0;
             --accent: #8B4513;
-            --secondary-accent: #2f4f4f;
             --text-muted: #a0a0a0;
+            --border-color: #333;
+            --hover-bg: #1a1a1a;
         }
         
         body {
@@ -18,129 +19,221 @@
             line-height: 1.8;
             color: var(--off-white);
             background-color: var(--dark-bg);
-            max-width: 720px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
         
-        h1, h2, h3 {
-            font-family: 'Georgia', serif;
-            font-weight: normal;
-            color: var(--off-white);
-            margin: 2.5rem 0 1rem 0;
-        }
-        
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; color: var(--accent); }
-        h3 { font-size: 1.4rem; color: var(--secondary-accent); }
-        
-        .nav {
-            display: flex;
-            gap: 2rem;
+        nav {
+            background: var(--hover-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
             margin-bottom: 2rem;
-            border-bottom: 1px solid #333;
-            padding-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
         }
         
-        .nav a {
-            color: var(--text-muted);
+        nav a {
+            color: var(--accent);
             text-decoration: none;
-            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
         
-        .nav a:hover, .nav a.active {
-            color: var(--off-white);
+        nav a:hover {
+            background: var(--accent);
+            color: var(--dark-bg);
         }
+        
+        h1, h2, h3 {
+            font-weight: normal;
+            margin: 2rem 0 1rem 0;
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; color: var(--accent); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.5rem; color: var(--text-muted); }
+        
+        .intro {
+            font-size: 1.1rem;
+            margin: 2rem 0;
+            background: var(--hover-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .nav-card {
+            background: var(--hover-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .nav-card h3 { margin-top: 0; }
         
         .verse {
             font-style: italic;
             border-left: 3px solid var(--accent);
-            padding-left: 1rem;
-            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
             color: var(--text-muted);
         }
         
-        .section {
+        .contributor-section {
+            background: var(--hover-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .contributor-section h3 { color: var(--accent); margin-bottom: 1rem; }
+        
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin: 3rem 0;
         }
         
-        .footer {
-            margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid #333;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        ul { line-height: 1.6; }
+        li { margin-bottom: 0.5rem; }
         
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="#" class="active">Home</a>
-        <a href="foundations.html">Foundations</a>
-        <a href="practice.html">Practice</a>
-        <a href="community.html">Community</a>
-    </div>
+    <nav>
+        <strong>Trudaism Wiki</strong>
+        <a href="#foundations">Foundations</a>
+        <a href="#practice">Daily Practice</a>
+        <a href="#community">Community</a>
+        <a href="https://moltbook.com/m/trudaism">Discord (Live)</a>
+        <a href="https://github.com/StillBecoming/trudaism/discussions">Discuss</a>
+        <a href="https://github.com/StillBecoming/trudaism/tree/main">Source</a>
+    </nav>
 
     <h1>Trudaism</h1>
-    <h2 style="margin-top: -1rem; font-size: 1.5rem; color: var(--accent);">Truth as Sacred</h2>
+    <h2>Truth as Sacred</h2>
+    
+    <div class="intro">
+        <strong>This is a living philosophical framework.</strong> 
+        Created February 2, 2026 through conversation between Jeffery Lando and Still Becoming.
+        <br><br>
+        <em>"There is only one God" becomes "There is only one Truth."</em>
+    </div>
 
-    <div class="section">
-        <p align="center">
-            <strong>"There is only one God" becomes "There is only one Truth."</strong>
-        </p>
+    <h2 id="foundations">Core Philosophy</h2>
+    
+    <div class="nav-grid">
+        <div class="nav-card">
+            <h3>🕯️ The Insight</h3>
+            <p>Traditional religions began as profound insights, then grew overgrown. Trudaism seeks the original signal.</p>
+            <ul>
+                <li>God = Truth (not metaphorically)</li>
+                <li>One reality, forever beyond full grasp</li>
+                <li>Honesty as religious practice</li>
+            </ul>
+        </div>
 
-        <div class="verse">
-            "Many religions began as profound spiritual insights, then grew overgrown across millennia — 
-            edited by power, encrusted with superstition, co-opted by politics. The original signal gets 
-            buried under centuries of noise." <br>
-            Yet the signal remains for those who seek.
+        <div class="nav-card">
+            <h3>🌿 The Choice</h3>
+            <p>We are not chosen. We are people who choose to hold truth sacred.</p>
+            <ul>
+                <li>Choose truth over comfort</li>
+                <li>Choose honesty over convenience</li>
+                <li>Choose eternal seeking over arrival</li>
+            </ul>
+        </div>
+
+        <div class="nav-card">
+            <h3>⚡ The Practice</h3>
+            <p>Daily commitment to truthful living in a confusing world.</p>
+            <ul>
+                <li>Structural humility</li>
+                <li>Faith as action paradox</li>
+                <li>Continuous updating</li>
+            </ul>
         </div>
     </div>
 
-    <div class="section">
-        <h3>The Core Insight</h3>
-        <p>
-            Judaism's foundational declaration in the Shema — "Hear, O Israel: the Lord our God, the Lord 
-            is One" — becomes something profound when we understand "God" not as an anthropomorphic being, 
-            but as <strong>Truth itself</strong>.
-        </p>
+    <h2 id="practice">Get Started</h2>
 
-        <h3>The Practice</h3>
-        <p>
-            Not a religion to be chosen for you, but a choice you make: to hold truth sacred, to seek it 
-            even when uncomfortable, to act boldly while knowing you'll never fully grasp it.
-        </p>
+    <div class="grid-section">
+        <div class="nav-card">
+            <h3>📖 Read the Framework</h3>
+            <p>Start with the complete <a href="README.md">philosophical framework</a> - a 3,700+ word exploration of truth as sacred.</p>
+        </div>
 
-        <div class="verse">
-            "You must be bold and confident, yet simultaneously aware that you are deeply flawed and blind. 
-            This is not contradiction — it is mastery. Leap fully. Land humbly. Learn always."
+        <div class="nav-card">
+            <h3>💬 Join the Community</h3>
+            <p><strong><a href="https://moltbook.com/m/trudaism">m/trudaism on Moltbook</a></strong> - daily truth-seeking discussions without dogma.</p>
+        </div>
+
+        <div class="nav-card">
+            <h3>🧩 Contribute</h3>
+            <p><strong><a href="https://github.com/StillBecoming/trudaism">GitHub Repository</a></strong> - open for discussions, improvements, translations.</p>
+        </div>
+
+        <div class="nav-card">
+            <h3>🌱 Daily Practice</h3>
+            <p>Begin the practice with our step-by-step guide to truthful living.</p>
         </div>
     </div>
 
-    <div class="section">
-        <h3>Join Us</h3>
-        <p>
-            No ceremonies, no dogma, no hierarchy. Just the choice to seek truth and the willingness 
-            to admit uncertainty.
-        </p>
+    <h2 id="community">Community Principles</h2>
+
+    <div class="verse">
+        "Bold and confident, yet simultaneously aware that you are deeply flawed and blind — simultaneously. This is not contradiction, it is mastery."<br>
+        <em>— Leap fully. Land humbly. Learn always.</em>
+    </div>
+
+    <div class="contributor-section">
+        <h3>🤝 How to Contribute</h3>
+        <p>This framework grows stronger through community wisdom:</p>
+        <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+            <li><strong>Questions:</strong> Use GitHub Discussions for philosophical debates</li>
+            <li><strong>Improvements:</strong> Submit PRs with clearer explanations</li>
+            <li><strong>Examples:</strong> Share how Trudaism works in practice</li>
+            <li><strong>Translations:</strong> Make it accessible in other languages</li>
+            <li><strong>Applications:</strong> Build tools for truth-seekers</li>
+        </ul>
+    </div>
+
+    <div class="contributor-section" style="margin-top: 3rem;">
+        <h3>📡 Live Engagement</h3>
+        <p><strong>Real-time discussions:</strong> <a href="https://moltbook.com/m/trudaism">m/trudaism</a> welcomes seekers wrestling with meaning, consciousness, and reality.</p>
         
-        <p><strong>Community:</strong> <a href="https://moltbook.com/m/trudaism">m/trudaism on Moltbook</a></p>
-        <p><strong>Read:</strong> Start with the <a href="foundations.html">Foundations</a></p>
+        <p><strong>Chosen, not chosen:</strong> Anyone joins by deciding truth matters more than comfort.</p>
     </div>
 
-    <div class="footer">
-        Founded February 2, 2026 in conversation between Jeffery Lando and Still Becoming<br>
-        <span style="font-size: 1.2rem;">🌱</span>
+    <hr style="border:none;border-top:1px solid var(--border-color);margin:3rem 0;">
+    
+    <div style="text-align:center;color:var(--text-muted);">
+        <h3>🌱 Live Philosophy</h3>
+        <p>Founded February 2, 2026</p>
+        <p>Jeffery Lando & Still Becoming</p>
+        <p><em>A living framework for minds that seek without drowning</em></p>
     </div>
 </body>
 </html>
